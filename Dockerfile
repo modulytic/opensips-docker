@@ -32,6 +32,7 @@ RUN apt-get install -y debconf-utils mariadb-server \
 	&& apt-get -y install git iptables opensips-mysql-module expect 
 
 COPY conf/apache2-opensips.conf /etc/apache2/sites-available/opensips.conf
+COPY conf/etc-opensips/opensips.cfg /etc/opensips/opensips.cfg
 COPY conf/etc-opensips/opensipsctlrc /etc/opensips/opensipsctlrc
 COPY script/dbcreate.sh /root/dbcreate.sh
 

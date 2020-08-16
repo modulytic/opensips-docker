@@ -15,7 +15,7 @@ $ make build
 Run the docker container
 
 ```Bash
-$ make run
+$ make start
 ```
 
 To log into the container to make configuration changes

@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 HOST_IP=$(ip route get 8.8.8.8 | head -n +1 | tr -s " " | cut -d " " -f 7)
 
@@ -6,10 +6,10 @@ HOST_IP=$(ip route get 8.8.8.8 | head -n +1 | tr -s " " | cut -d " " -f 7)
 
 service rsyslog start
 service apache2 start
-service mysql start
+service mariadb start
 
 iptables -t nat -A OUTPUT -o lo -p tcp --dport 8080 -j REDIRECT --to-port 3306
 
-/usr/sbin/opensipsctl start
+#/usr/sbin/opensipsctl start
 
 tail -f /var/log/opensips.log
